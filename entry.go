@@ -1,8 +1,18 @@
 package main
 
-import "GoForIMServer/web"
+import (
+	"GoForIMServer/web"
+	"flag"
+)
+
+var port string
+
+func init() {
+	flag.StringVar(&port, "port", "default", "8090")
+}
 
 func main() {
-	server := web.GetServerInstance()
+	flag.Parse()
+	server := web.GetServerInstance(port)
 	server.Run()
 }
