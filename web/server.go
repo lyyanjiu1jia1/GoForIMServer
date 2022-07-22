@@ -25,5 +25,5 @@ func (server Server) ping() {
 		c.JSON(http.StatusOK, gin.H{"message": "pong"})
 	}
 
-	server.ginEngine.GET("/ping",resp)
+	server.ginEngine.GET("/ping", resp)
 }
